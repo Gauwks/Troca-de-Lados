@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Maria Clara e Elizabete">
+    <meta name="author" content="Maria Clara, Elizabete e Rafael">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <title>Lado A e B</title>
 </head>
 <body>
  <div class="container">
     <fieldset> 
-        <div class="lado-a" id="a">
+        <div class="container-a" id="a">
             <h2>Lado A</h2>
         </div>  
         <button onclick="enviarB()">Enviar para o lado B</button>
     </fieldset>
 
     <fieldset> 
-        <div id="b">
+        <div class="container-b" id="b">
             <h2>Lado B</h2>
         </div>
         <button onclick="enviarA()">Enviar para o lado A</button> 
@@ -26,39 +27,9 @@
       <br>
      <div class="enviar"> 
         <input type="text" name="texto" id="texto">
-        <button onclick="addMsg()">Enviar</button>
+        <button onclick="addMsg()">Enviar</button> <br> <br> 
+        <button onclick="limpar()"> Limpar tudo </button>
      </div>
-<script>
-    function addMsg(){
-        let msg = document.getElementById("texto").value;
-        if (msg.trim() === "") return; 
-
-        let novaMsg = document.createElement("p"); 
-        novaMsg.classList.add("mensagem"); 
-        novaMsg.textContent = msg; 
-
-        document.getElementById("a").appendChild(novaMsg); 
-        document.getElementById("texto").value = ""; 
-    }
-
-    function enviarB(){
-        let mensagensA = document.querySelectorAll("#a .mensagem");
-        if (mensagensA.length === 0) return; 
-
-        mensagensA.forEach(msg => {
-            document.getElementById("b").appendChild(msg);
-        });
-    }
-
-    function enviarA(){
-        let mensagensB = document.querySelectorAll("#b .mensagem");
-        if (mensagensB.length === 0) return; 
-
-        mensagensB.forEach(msg => {
-            document.getElementById("a").appendChild(msg);
-        });
-    }
-</script>
-
+     
 </body>
 </html>

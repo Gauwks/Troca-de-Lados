@@ -6,7 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, #f0f0f0, #d9eaff);
+    background: linear-gradient(to right, rgb(240, 240, 240), rgb(217, 234, 255));
 }
 
 .container {
@@ -18,7 +18,7 @@ body {
     gap: 20px;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.349);
 }
 
 .input {
@@ -49,12 +49,12 @@ button {
     font-size: 16px;
     border: none;
     border-radius: 4px;
-    background-color: rgb(40, 167, 69);
+    background-color: rgb(51, 118, 194);
     color: rgb(255, 255, 255);
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
  button:hover {
-    background-color: #218838;
+    background-color: rgb(48, 107, 173);
 }
