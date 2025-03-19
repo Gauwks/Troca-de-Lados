@@ -18,7 +18,25 @@ body {
     gap: 20px;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.349);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lado-a, .lado-b {
+    width: 100%;
+    max-width: 200px;
+    padding: 20px;
+    border: 2px solid rgb(221, 221, 221);
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lado-a {
+    background-color: rgb(233, 247, 223);
+}
+
+.lado-b {
+    background-color: rgb(224, 247, 250);
 }
 
 .input {
@@ -30,7 +48,7 @@ body {
     max-width: 900px;
 }
 
-#texto{
+#texto {
     width: 100%;
     max-width: 400px;
     padding: 10px;
@@ -49,12 +67,57 @@ button {
     font-size: 16px;
     border: none;
     border-radius: 4px;
-    background-color: rgb(51, 118, 194);
+    background-color: rgb(40, 167, 69);
     color: rgb(255, 255, 255);
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
- button:hover {
-    background-color: rgb(48, 107, 173);
+button:hover {
+    background-color: rgb(33, 136, 56);
+}
+
+.troca button {
+    width: auto;
+    height: 40px;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(69, 69, 69);
+    cursor: pointer;
+    padding: 0 10px;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.troca button:hover {
+    background-color: rgb(24, 24, 24);
+}
+
+.btn-excluir {
+    width: 40px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    font-size: 10px;
+    border: none;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.btn-excluir:hover {
+    background-color: darkred;
+}
+
+.mensagem {
+    padding: 10px;
+    margin: 5px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.mensagem:hover {
+    background-color: rgb(224, 224, 224);
 }

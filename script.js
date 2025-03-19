@@ -1,34 +1,46 @@
-function addMsg(){
+let mensagemSelecionada = null;
+
+function addMsg() {
     let msg = document.getElementById("texto").value;
-    if (msg.trim() === "") return; 
+    let destino = document.querySelector("input[name='destino']:checked").value;
+    if (msg.trim() === "") return;
 
-    let novaMsg = document.createElement("p"); 
-    novaMsg.classList.add("mensagem"); 
-    novaMsg.textContent = msg; 
+    let novaMsg = document.createElement("div");
+    novaMsg.textContent = msg;
+    novaMsg.classList.add("mensagem");
 
-    document.getElementById("a").appendChild(novaMsg); 
-    document.getElementById("texto").value = ""; 
+    novaMsg.onclick = function() {
+        selecionarMensagem(novaMsg);
+    };
+
+    let btnExcluir = document.createElement("button");
+    btnExcluir.textContent = "X";
+    btnExcluir.classList.add("btn-excluir");
+    btnExcluir.onclick = function(event) {
+        event.stopPropagation();
+        if (mensagemSelecionada === novaMsg) {
+            mensagemSelecionada = null;
+        }
+        novaMsg.remove();
+    };
+
+    novaMsg.appendChild(btnExcluir);
+    document.getElementById(destino).appendChild(novaMsg);
+    document.getElementById("texto").value = "";
 }
 
-function enviarB(){
-    let mensagensA = document.querySelectorAll("#a .mensagem");
-    if (mensagensA.length === 0) return; 
-
-    mensagensA.forEach(msg => {
-        document.getElementById("b").appendChild(msg);
-    });
+function selecionarMensagem(mensagem) {
+    if (mensagemSelecionada) {
+        mensagemSelecionada.style.backgroundColor = "";
+    }
+    mensagemSelecionada = mensagem;
+    mensagemSelecionada.style.backgroundColor = "yellow";
 }
 
-function enviarA(){
-    let mensagensB = document.querySelectorAll("#b .mensagem");
-    if (mensagensB.length === 0) return; 
-
-    mensagensB.forEach(msg => {
-        document.getElementById("a").appendChild(msg);
-    });
-}
-
-function limpar() {
-    document.querySelectorAll("#a .mensagem").forEach(msg => msg.remove());
-    document.querySelectorAll("#b .mensagem").forEach(msg => msg.remove());
+function moverSelecionado(destino) {
+    if (mensagemSelecionada) {
+        document.getElementById(destino).appendChild(mensagemSelecionada);
+        mensagemSelecionada.style.backgroundColor = "";
+        mensagemSelecionada = null;
+    }
 }

@@ -3,33 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Maria Clara, Elizabete e Rafael">
+    <meta name="author" content="Maria Clara e Elizabete">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <title>Lado A e B</title>
 </head>
 <body>
- <div class="container">
-    <fieldset> 
-        <div class="container-a" id="a">
-            <h2>Lado A</h2>
-        </div>  
-        <button onclick="enviarB()">Enviar para o lado B</button>
-    </fieldset>
+    <div class="container">
+        
+            <div class="lado-a" id="a">
+                <h2>Lado A</h2>
+            </div>  
+      
 
-    <fieldset> 
-        <div class="container-b" id="b">
-            <h2>Lado B</h2>
+        <div class="troca">
+            <button onclick="moverSelecionado('b')"> Enviar para B </button>  
+            <button onclick="moverSelecionado('a')"> Enviar para A </button>
         </div>
-        <button onclick="enviarA()">Enviar para o lado A</button> 
-    </fieldset> 
-  </div>   
-      <br>
-     <div class="enviar"> 
+
+        
+            <div class="lado-b" id="b">
+                <h2>Lado B</h2>
+            </div>
+        
+    </div>   
+    <br>
+    <div class="enviar"> 
         <input type="text" name="texto" id="texto">
-        <button onclick="addMsg()">Enviar</button> <br> <br> 
-        <button onclick="limpar()"> Limpar tudo </button>
-     </div>
-     
+        <label>
+            <input type="radio" name="destino" value="a" checked> Lado A
+        </label>
+        <label>
+            <input type="radio" name="destino" value="b"> Lado B
+        </label>
+        <button onclick="addMsg()">Enviar</button>
+    </div>
+
 </body>
 </html>
