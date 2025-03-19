@@ -121,3 +121,7 @@ button:hover {
 .mensagem:hover {
     background-color: rgb(224, 224, 224);
 }
+
+footer{
+    padding-top: 5px;
+}
